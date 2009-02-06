@@ -18,12 +18,14 @@ public void init() {
 this.addMouseListener(this) ;
 this.addMouseMotionListener(this);
 }
+
 // Метод интерфейса MouseListener. Вызывается при нажатии
 // пользователем кнопки мыши.
 public void mousePressed(MouseEvent e) {
 last_x = e.getX();
 last_y = e.getY();
 }
+
 // Метод интерфейса MouseMotionListener. Вызывается при
 // перемещении мыши с нажатой кнопкой.
 public void mouseDragged(MouseEvent e) {
