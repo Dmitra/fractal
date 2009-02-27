@@ -6,24 +6,34 @@ import javax.swing.*;
 
 public class Dialog extends JFrame {
 
-  JTextArea txt;
+  JTextField fld = new JTextField();
+  JButton btn = new JButton("Нажать нежно");
+  JLabel lbl = new JLabel(" ");
 
   Dialog() {
-     super("Визульное приложения с текстовой областью");
+     super("Слушатели (listeners) полей и кнопок");
 
      try  {
-    	 UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
      }
      catch(Exception e) {
      }
 
-    setSize(400, 200);
+    setSize(400, 150);
     Container c = getContentPane();
-    c.add(new JLabel("Hello, привет"), BorderLayout.NORTH);
-    txt = new JTextArea(5, 30);
-    JScrollPane pane = new JScrollPane(txt);
-    c.add(pane, BorderLayout.CENTER);
-
+    c.add(lbl, BorderLayout.NORTH);
+    c.add(fld, BorderLayout.CENTER);
+    c.add(btn, BorderLayout.SOUTH);
+    fld.addActionListener(new ActionListener(){
+          public void actionPerformed(ActionEvent e) {
+              lbl.setText("Введен текст:"+fld.getText());
+          }
+        });
+    btn.addActionListener(new ActionListener(){
+          public void actionPerformed(ActionEvent e) {
+              lbl.setText("Нажата кнопка");
+          }
+        });
     WindowListener wndCloser = new WindowAdapter() {
       public void windowClosing(WindowEvent e) {
         System.exit(0);
@@ -34,13 +44,7 @@ public class Dialog extends JFrame {
     setVisible(true);
   }
 
-  public void test() {
-    txt.append("Первая строка\n");
-    txt.append("Вторая строка\n");
-  }
-
   public static void main(String[] args) {
-    Dialog d = new Dialog();
-    d.test();
+    new Dialog();
   }
 }
