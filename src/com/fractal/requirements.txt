@@ -1,0 +1,22 @@
+Neuron grow (pixel by pixel)
+Rounded grow
+
+2D-modeling: Lines thickness
+Leaves
+ 
+sub3D: - grow in column (в толще)
+
+Natural Objects	
+	Firtree
+	Fern
+
+Forces
+	Gravity emulation => branches sagging (прогибание)
+
+Application facilities
+	Draw basic figure by mouse
+	Gauge
+	Multithreading
+
+Performance (sample fractals)
+16ms	branched_tree 12 iter
