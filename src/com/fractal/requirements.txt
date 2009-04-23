@@ -17,6 +17,3 @@ Application facilities
 	Draw basic figure by mouse
 	Gauge
 	Multithreading
-
-Performance (sample fractals)
-16ms	branched_tree 12 iter

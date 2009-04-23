@@ -1,6 +1,6 @@
 package com.fractal;
 
-public class Point {
+public class Point extends Set{		//Point is a single unit Set
 	double x;
 	double y;
 	public Point(double x, double y){
@@ -18,6 +18,14 @@ public class Point {
 	}
 	public void setY(double y){
 		this.y = y;
+	}
+	@Override
+	public double[] array() {
+		return new double[] {x, y};
+	}
+	@Override
+	public void setArray(double[] array) {
+		x = array[0]; y = array[1];
 	}
 	public Point minus(Point point){
 		this.x -= point.x;

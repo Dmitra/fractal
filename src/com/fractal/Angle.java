@@ -6,9 +6,9 @@ public class Angle {
 		this.alpha = alpha;
 	}
 	public double toRadian(){
-		return alpha = alpha/180d *(Math.PI);
+		return alpha/180 *(Math.PI);
 	}
 	public double toDegree(){
-		return alpha = alpha*180d/(Math.PI);
+		return alpha*180/(Math.PI);
 	}
 }

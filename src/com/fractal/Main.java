@@ -10,11 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Main extends JPanel {
-	public static Fractal fractal = Fractal.samples.get(0);;
+	public static Fractal fractal = Fractal.samples.get(3);;
 	public static Date time = new Date(); 
   public static void main(String[] a) {
     time = new Date();
-    fractal.iter(12, false);
+    fractal.iter(6, false);
     puts(new Date().getTime() - time.getTime());
 
     JFrame frame = new JFrame();
@@ -23,11 +23,13 @@ public class Main extends JPanel {
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
   }
-  public void paint(Graphics g2) {
-	  g2.setColor (Color.red);
+  public void paint(Graphics g) {
+	  g.setColor (Color.red);
 	  for (Line i:fractal.list){
-		  double[] coords = i.coords();
-		  g2.drawLine ((int)coords[0], (int) coords[1], (int) coords[2], (int) coords[3]);
+		  double[] coords = i.array();
+		  g.drawLine ((int)coords[0], (int) coords[1], (int) coords[2], (int) coords[3]);
+//		  g.drawString(""+(int)coords[0]+", "+(int)coords[1]+" -> "+(int)coords[2]+","+(int)coords[3], (int)coords[2], (int)coords[3]);
+//		  g.drawString("_center", 600,600);
     }
   }
 }
