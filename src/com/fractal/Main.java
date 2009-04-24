@@ -24,12 +24,12 @@ public class Main extends JPanel {
     frame.setVisible(true);
   }
   public void paint(Graphics g) {
-	  g.setColor (Color.red);
+	  g.setColor (new Color(20,170,20));
 	  for (Line i:fractal.list){
-		  double[] coords = i.array();
-		  g.drawLine ((int)coords[0], (int) coords[1], (int) coords[2], (int) coords[3]);
-//		  g.drawString(""+(int)coords[0]+", "+(int)coords[1]+" -> "+(int)coords[2]+","+(int)coords[3], (int)coords[2], (int)coords[3]);
-//		  g.drawString("_center", 600,600);
-    }
+		double[] coords = i.array();
+		g.drawLine ((int)coords[0], (int) coords[1], (int) coords[2], (int) coords[3]);
+//		g.drawString(""+(int)coords[0]+", "+(int)coords[1]+" -> "+(int)coords[2]+","+(int)coords[3], (int)coords[2], (int)coords[3]);
+//		g.drawString("_center", 600,600);
+	  }
   }
 }

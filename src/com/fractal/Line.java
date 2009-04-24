@@ -87,4 +87,8 @@ public class Line extends Set{
 	public Line grow(Angle direction, Point distance){
 		return (Line) Line.rel(ending().x, ending().y, distance.x, distance.y).rotate(direction, ending());
 	}
+	public Line grow(Angle direction) {
+		Point vector = vector(); 
+		return (Line) Line.rel(ending().x, ending().y, vector.x, vector.y).rotate(direction, ending());
+	}
 }

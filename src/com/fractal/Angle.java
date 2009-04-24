@@ -11,4 +11,7 @@ public class Angle {
 	public double toDegree(){
 		return alpha*180/(Math.PI);
 	}
+	public Angle minus(int i) {
+		return new Angle(alpha - i);
+	}
 }
