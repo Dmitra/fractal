@@ -1,5 +1,0 @@
-ms		transformation	iterations
-187		tick 			14
-47		snowflake		6
-2500	dragon			16
-15ms	branched_tree 	12
